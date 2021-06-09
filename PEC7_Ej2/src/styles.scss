@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+.form {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-self: center;
+  margin-top: 1rem;
+}
+
+.form-control {
+  display: grid;
+  justify-content: center;
+  justify-items: start;
+  align-content: center;
+  align-self: center;
+  grid-template-rows: auto auto;
+  margin: 20px;
+  padding: 0.5rem;
+
+   * {
+     margin: 0.25rem;
+   }
+}
+
+.form-error {
+  color: red;
+}

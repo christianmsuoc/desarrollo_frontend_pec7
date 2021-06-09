@@ -15,6 +15,7 @@ export class WineNewComponent {
 
   wineForm: FormGroup = this.fb.group({
     name: ['', [Validators.required, WineValidators.nameValid]],
+    description: [''],
     price: [1, [Validators.required, Validators.min(1)]],
     imageUrl: ['', [
       Validators.required,
@@ -33,6 +34,10 @@ export class WineNewComponent {
 
   get name(): FormControl {
     return this.wineForm?.controls.name as FormControl;
+  }
+
+  get description(): FormControl {
+    return this.wineForm?.controls.description as FormControl;
   }
 
   get price(): FormControl {

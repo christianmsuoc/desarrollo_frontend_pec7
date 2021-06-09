@@ -1,0 +1,15 @@
+<form  [formGroup]="registerForm" (submit)="doRegister(registerForm.value)"  class="form">
+
+  <h2>Register into Wines!</h2>
+  <div class="form-control">
+    <label for="username">Username</label>
+    <input formControlName="username" id="username" type="text">
+  </div>
+
+  <div class="form-control">
+    <label for="password">Password</label>
+    <input formControlName="password" id="password" type="password">
+  </div>
+
+  <button>Login!</button>
+</form>

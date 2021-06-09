@@ -16,6 +16,16 @@
     <div class="form-control">
       <input
         style="grid-column: span 2"
+        type="text"
+        required
+        placeholder="Wine description"
+        [formControl]="description"
+        name="description">
+    </div>
+
+    <div class="form-control">
+      <input
+        style="grid-column: span 2"
         type="number"
         required
         [formControl]="price"

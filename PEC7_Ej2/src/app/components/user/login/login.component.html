@@ -1,0 +1,22 @@
+<div *ngIf="userStoreService.isLogged; else form" class="logout">
+  <h2>User is already logged!! </h2>
+  <button (click)="logout()">Logout!</button>
+</div>
+
+<ng-template #form>
+  <form  [formGroup]="loginForm" (submit)="doLogin(loginForm.value)"  class="form">
+    <h2>Login into Wines!</h2>
+    <div class="form-control">
+      <label for="username">Username</label>
+      <input formControlName="username" id="username" type="text">
+    </div>
+
+    <div class="form-control">
+      <label for="password">Password</label>
+      <input formControlName="password" id="password" type="password">
+    </div>
+
+    <button>Login!</button>
+  </form>
+</ng-template>
+

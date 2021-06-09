@@ -7,7 +7,7 @@ import {WineQuantityChange} from '../../../models/wine-quantity-change';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="wine" [ngClass]="{'available': wine?.isOnSale, 'unavailable': !wine?.isOnSale}">
-      <img [src]="wine?.imageUrl | image" [alt]="wine?.name + ' image'">
+      <img [routerLink]="'/wine/' + wine.id" [src]="wine?.imageUrl | image" [alt]="wine?.name + ' image'">
       <p>{{ wine?.name }}</p>
       <p>{{ wine?.price | number: '1.2-2' | currency:'EUR':'symbol'}}</p>
       <div class="unit-selector">

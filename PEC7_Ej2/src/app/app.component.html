@@ -1,3 +1,8 @@
 <h1 style="text-align: center">TPV Vinoteca!</h1>
-
-<app-winelist></app-winelist>
+<div class="navbar">
+  <a [routerLink]="'login'">Login</a>
+  <a [routerLink]="'register'">Register</a>
+  <a [routerLink]="'wine/list'">Wine List</a>
+  <a [routerLink]="'wine/create'">Create wine</a>
+</div>
+<router-outlet></router-outlet>

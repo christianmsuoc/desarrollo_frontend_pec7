@@ -9,6 +9,9 @@ import {WineNewComponent} from './components/wines/wine-new/wine-new.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { ImagePipe } from './pipes/image.pipe';
+import { WineDetailComponent } from './components/wines/wine-detail/wine-detail.component';
+import { LoginComponent } from './components/user/login/login.component';
+import { RegisterComponent } from './components/user/register/register.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { ImagePipe } from './pipes/image.pipe';
     WineitemComponent,
     WinelistComponent,
     WineNewComponent,
-    ImagePipe
+    ImagePipe,
+    WineDetailComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

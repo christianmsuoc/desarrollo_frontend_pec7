@@ -1,0 +1,21 @@
+<div class="wine-detail">
+  <div>
+    <img [src]="wine?.imageUrl | image" [alt]="wine?.name + ' image'">
+  </div>
+
+  <div>
+    <p>Name: {{ wine?.name }}</p>
+    <p>Price: {{ wine?.price | number: '1.2-2' | currency:'EUR':'symbol'}}</p>
+    <p>{{wine.description}}</p>
+
+    <div class="foods">
+      <h2> Good with</h2>
+      <div class="food"  *ngFor="let food of wine.foodPairing">
+        <p>{{food.name}} - {{food.kcal}}Kcal
+          <span style="color: green" *ngIf="food.vegan"> (Vegan) </span>
+          <span style="color: red" *ngIf="food.gluten"> (Contains Gluten) </span>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
