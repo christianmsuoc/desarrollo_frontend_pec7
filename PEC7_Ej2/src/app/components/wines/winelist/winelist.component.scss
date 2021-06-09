@@ -1,0 +1,13 @@
+.wine-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+}
+
+.wine-search {
+  display: grid;
+  margin: 20px 0;
+  justify-content: center;
+}

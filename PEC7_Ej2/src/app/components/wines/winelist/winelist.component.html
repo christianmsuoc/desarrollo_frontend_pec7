@@ -1,0 +1,17 @@
+<div class="wine-search">
+  <div>
+    <label for="wine-search">Wine search: </label>
+    <input id="wine-search" type="text" [formControl]="wineSearch">
+  </div>
+
+</div>
+
+<div class="wine-container">
+  <app-wineitem
+    *ngFor="let wine of (wines$ | async); trackBy: identifyWine"
+    [wine]="wine"
+    (changeQuantity)="changeQuantity($event)">
+  </app-wineitem>
+</div>
+<app-wine-new (wineCreated)="wineCreated()"></app-wine-new>
+

@@ -1,0 +1,55 @@
+<form (submit)="createWine(wineForm)" [formGroup]="wineForm"  class="form">
+  <h2>Create wine</h2>
+  <div>
+    <div class="form-control">
+      <input
+        style="grid-column: span 2"
+        type="text"
+        required
+        placeholder="Wine Name"
+        [formControl]="name"
+        name="name">
+      <small class="form-error" *ngIf="name.touched && name.errors?.required">Wine name is required</small>
+      <small class="form-error" *ngIf="name.touched && name.errors?.nameValid">Wine name is invalid</small>
+    </div>
+
+    <div class="form-control">
+      <input
+        style="grid-column: span 2"
+        type="number"
+        required
+        [formControl]="price"
+        placeholder="Wine Price"
+        name="price">
+      <small class="form-error" *ngIf="price.touched && price.errors?.required">Wine price is required</small>
+      <small class="form-error" *ngIf="price.touched && price.errors?.min">Wine price must be higher than 1</small>
+    </div>
+
+    <div class="form-control">
+      <input
+        style="grid-column: span 2"
+        type="text"
+        required
+        [formControl]="imageUrl"
+        placeholder="Wine Image URL"
+        name="url">
+      <small class="form-error" *ngIf="imageUrl.touched && imageUrl.errors?.required">Wine Image URL is required</small>
+      <small class="form-error" *ngIf="imageUrl.touched && imageUrl.errors?.pattern">Wine Image URL does not seem to be a valid URL</small>
+    </div>
+
+    <div class="form-control">
+      <input
+        id="isOnSale"
+        type="checkbox"
+        [formControl]="isOnSale"
+        name="isOnSale">
+      <label for="isOnSale">On Sale</label>
+    </div>
+
+    <div class="form-control">
+      <button [disabled]="wineForm.invalid">Create</button>
+    </div>
+
+
+  </div>
+</form>
